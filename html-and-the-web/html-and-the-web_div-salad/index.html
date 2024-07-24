@@ -14,7 +14,7 @@ Let's fix this mess!
   <!--someone forgot to wrap the content of our webpage with an HTML element,
 	which one was it again?-->
   <body>
-    <header>
+    <div>
       <h1>Jane Doe</h1>
       <!--Which elements could be used to link to parts of the webpage,
 		which appear below?-->
@@ -25,10 +25,10 @@ Let's fix this mess!
           <li>Skillset</li>
         </ul>
       </nav>
-    </header>
+    </div>
     <!--Looks like the following part is the central content of our webpage.-->
     <main>
-      <section id="about-me">
+      <header id="about-me">
         <h2>About me</h2>
         <p>
           Hi there! Welcome to my personal website. Here is gathered the most
@@ -36,20 +36,17 @@ Let's fix this mess!
           know me, please don't hesitate to get in contact.
         </p>
         <!--What element could be used to combine an image with a descriptive caption?-->
-        <article>
-          <img
-            src="https://source.unsplash.com/random/400x300?fruit"
-            alt="a random picture"
-          />
-          <p>
+        <figure>
+          <img src="https://picsum.photos/200/300" alt="a random picture" />
+          <figcaption>
             A random picture, because I would like to maintain my privacy and
             let my code speak for me, instead of images.
-          </p>
-        </article>
-      </section>
+          </figcaption>
+        </figure>
+      </header>
 
       <div id="contact">
-        <div>Contact</div>
+        <h2>Contact</h2>
         <!--When clicking on these element, nothing happens! But I want to be redirected to the other websites. Why is it not working?-->
         <a href="https://github.com/spiced-academy">GitHub</a>
         <a href="https://de.linkedin.com/">LinkedIn</a>
