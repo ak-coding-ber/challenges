@@ -101,20 +101,18 @@ section:nth-of-type(2) {
 /* Task 7: Last but not least! We want to style our list with our favorite Pokémon. Which selector do we need? And also add values for the padding. */
 
 /* add selector */
- {
+ul {
   list-style: "🧡";
-  padding-left: /* add value */ ;
-}
-
-/* add selector */
- {
-  padding-left: /* add value */ ;
+  padding-left: 50px; /* add value */
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* ------- The End -------- */
 
 .image-fluid {
-  width: 100%;
+  margin-left: 25%;
+  width: 50%;
   height: auto;
 }
 
