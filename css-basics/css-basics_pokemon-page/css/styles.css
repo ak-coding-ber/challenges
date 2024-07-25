@@ -41,6 +41,10 @@ h2 {
 
 .title {
   /* your solution */
+  background-color: white;
+  margin-top: 0;
+  padding: 10px;
+  text-align: center;
 }
 
 /* ------- Sections ------- */
@@ -55,6 +59,18 @@ h2 {
 
 section {
   /* your solution */
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-left: solid 5px orange;
+}
+
+section:nth-of-type(2) {
+  /* your solution */
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-left: solid 5px gold;
 }
 
 /* ------- Headings Part 2 ------- */
