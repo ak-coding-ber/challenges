@@ -85,6 +85,15 @@ section:nth-of-type(2) {
 
 .subtitle {
   /* your solution */
+  border-left: solid 3px gold;
+  border-right: solid 3px gold;
+  padding: 5px;
+  display: inline;
+}
+
+.favourites .subtitle {
+  border-left: solid 3px orange;
+  border-right: solid 3px orange;
 }
 
 /* ------- List ------- */
