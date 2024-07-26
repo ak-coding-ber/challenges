@@ -24,6 +24,7 @@ body {
   padding: 10px;
   position: fixed;
   top: 0;
+  z-index: 2;
   width: 100%;
 }
 
@@ -47,7 +48,6 @@ body {
   color: #ffffff;
   height: 48px;
   width: 100%;
-  text-align: center;
 }
 
 /**
@@ -60,6 +60,7 @@ body {
   padding: 3% 10%;
   scroll-margin-top: 100px;
   border-radius: 2rem;
+  position: relative;
 }
 
 .card__heading {
@@ -70,6 +71,9 @@ body {
  * Place the bookmark in the top, right corner of each card.
  */
 .card__bookmark {
+  position: absolute;
+  right: 5px;
+  top: 5px;
   border: 2px solid #8236ff;
   font-size: 2em;
   padding: 6px 12px;
@@ -82,6 +86,9 @@ body {
  * unaffected when the document is scrolled.
  */
 .goto-top {
+  /* position: absolute; */
+  position: relative;
+  z-index: 2;
   width: 48px;
   height: 48px;
   padding: 8px;
