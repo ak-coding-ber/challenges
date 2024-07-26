@@ -41,10 +41,17 @@ main {
 
 .box--top-center {
   background-color: #85c1e9;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%);
 }
 
 .box--top-right {
   background-color: #5dade2;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .box--center {
