@@ -128,14 +128,14 @@ li {
 }
 
 /* 13. These styles should apply to all nested lists */
-FIX_ME {
+.list .list {
   outline: 2px dashed red;
   margin: 0.5rem 0 0 0;
   background-color: #f1f1f1;
 }
 
 /* 14. These styles should apply to all list items in nested lists */
-FIX_ME {
+.list .list li {
   outline: 2px dashed red;
   margin: 0;
   color: #2673bb;
