@@ -69,20 +69,20 @@ a {
 }
 
 /* 4. These styles should apply to all links in the main navigation */
-FIX_ME {
+nav a {
   outline: 2px dashed red;
   color: #ffffff;
   text-decoration: none;
 }
 
 /* 5. These styles should apply to the main navigation link corresponding to the current page */
-FIX_ME {
+.current {
   outline: 2px dashed red;
   color: #22e781;
 }
 
 /* 6. These styles should apply to all links in the footer */
-FIX_ME {
+footer a {
   outline: 2px dashed red;
   color: inherit;
 }
