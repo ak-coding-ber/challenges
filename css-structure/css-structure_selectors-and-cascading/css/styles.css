@@ -88,40 +88,41 @@ footer a {
 }
 
 /* 7. These styles should apply to all paragraphs and all lists (please use a class selector) */
-FIX_ME {
+.text,
+.list {
   outline: 2px dashed red;
   color: #2c3f3f;
 }
 
 /* 8. These styles should apply to all "notes" */
-FIX_ME {
+.text-note {
   outline: 2px dashed red;
   font-size: 0.8em;
   color: #808080;
 }
 
 /* 9. These styles should apply to the welcome text */
-FIX_ME {
+#welcome-text {
   outline: 2px dashed red;
   font-size: 1.2rem;
   color: #000000;
 }
 
 /* 10. These styles should apply to the paragraph in the footer */
-FIX_ME {
+footer .text {
   outline: 2px dashed red;
   color: #ffffff;
 }
 
 /* 11. These styles should apply to all lists in the main content */
-FIX_ME {
+main .list {
   outline: 2px dashed red;
   padding: 1rem 2rem;
   background: #caced2;
 }
 
 /* 12. These styles should apply to all list items */
-FIX_ME {
+li {
   outline: 2px dashed red;
   margin: 0 0 0.5rem 0;
 }
