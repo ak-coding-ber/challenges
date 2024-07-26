@@ -49,7 +49,7 @@ nav li {
 /* -------------------------------------------------------- */
 
 /* 1. These styles should apply to the headline */
-FIX_ME {
+h1 {
   outline: 2px dashed red;
   font-size: 2rem;
   margin: 0 2rem 0 0;
@@ -57,84 +57,85 @@ FIX_ME {
 }
 
 /* 2. These styles should apply to all links */
-FIX_ME {
+a {
   outline: 2px dashed red;
   color: #ff00e6;
 }
 
 /* 3. These styles should apply to all external links (you can use the attribute selector) */
-FIX_ME {
+[href^="http"] {
   outline: 2px dashed red;
   color: #ff8000;
 }
 
 /* 4. These styles should apply to all links in the main navigation */
-FIX_ME {
+nav a {
   outline: 2px dashed red;
   color: #ffffff;
   text-decoration: none;
 }
 
 /* 5. These styles should apply to the main navigation link corresponding to the current page */
-FIX_ME {
+.current {
   outline: 2px dashed red;
   color: #22e781;
 }
 
 /* 6. These styles should apply to all links in the footer */
-FIX_ME {
+footer a {
   outline: 2px dashed red;
   color: inherit;
 }
 
 /* 7. These styles should apply to all paragraphs and all lists (please use a class selector) */
-FIX_ME {
+.text,
+.list {
   outline: 2px dashed red;
   color: #2c3f3f;
 }
 
 /* 8. These styles should apply to all "notes" */
-FIX_ME {
+.text-note {
   outline: 2px dashed red;
   font-size: 0.8em;
   color: #808080;
 }
 
 /* 9. These styles should apply to the welcome text */
-FIX_ME {
+#welcome-text {
   outline: 2px dashed red;
   font-size: 1.2rem;
   color: #000000;
 }
 
 /* 10. These styles should apply to the paragraph in the footer */
-FIX_ME {
+footer .text {
   outline: 2px dashed red;
   color: #ffffff;
 }
 
 /* 11. These styles should apply to all lists in the main content */
-FIX_ME {
+main .list {
   outline: 2px dashed red;
   padding: 1rem 2rem;
   background: #caced2;
 }
 
 /* 12. These styles should apply to all list items */
-FIX_ME {
+li {
   outline: 2px dashed red;
   margin: 0 0 0.5rem 0;
 }
 
 /* 13. These styles should apply to all nested lists */
-FIX_ME {
+.list .list {
   outline: 2px dashed red;
   margin: 0.5rem 0 0 0;
   background-color: #f1f1f1;
 }
 
 /* 14. These styles should apply to all list items in nested lists */
-FIX_ME {
+.list .list li {
   outline: 2px dashed red;
   margin: 0;
   color: #2673bb;
