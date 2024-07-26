@@ -60,12 +60,22 @@ main {
 
 .box--bottom-left {
   background-color: #2874a6;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .box--bottom-center {
   background-color: #21618c;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 0;
 }
 
 .box--bottom-right {
   background-color: #1b4f72;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
