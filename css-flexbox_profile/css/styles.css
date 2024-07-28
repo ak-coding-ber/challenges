@@ -1,0 +1,49 @@
+:root {
+    --primary-dark: #2E016D;
+    --primary: #3F0097;
+    --primary-light: #8236FF;
+    --secondary-dark: #38CCDA;
+    --secondary: #7fD9E2;
+    --accent: #FFD15D;
+
+    --black-light: #303030;
+    --black: #000000;
+    --white: #FFFFFF;
+    --grey-dark: #B6B9C2;
+    --grey-light: #F5F6F6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.main__title {
+  padding: 10px;
+  background: var(--primary);
+  color: var(--white);
+}
+
+.profile__image {
+  border-radius: 50%;
+  max-width: 50%;
+  height: auto;
+}
+
+.tech-stack__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tech-stack__list-item {
+  padding: 10px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  border-radius: 10px;
+}
