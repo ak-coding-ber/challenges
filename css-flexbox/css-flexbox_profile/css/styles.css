@@ -1,16 +1,16 @@
 :root {
-    --primary-dark: #2E016D;
-    --primary: #3F0097;
-    --primary-light: #8236FF;
-    --secondary-dark: #38CCDA;
-    --secondary: #7fD9E2;
-    --accent: #FFD15D;
+  --primary-dark: #2e016d;
+  --primary: #3f0097;
+  --primary-light: #8236ff;
+  --secondary-dark: #38ccda;
+  --secondary: #7fd9e2;
+  --accent: #ffd15d;
 
-    --black-light: #303030;
-    --black: #000000;
-    --white: #FFFFFF;
-    --grey-dark: #B6B9C2;
-    --grey-light: #F5F6F6;
+  --black-light: #303030;
+  --black: #000000;
+  --white: #ffffff;
+  --grey-dark: #b6b9c2;
+  --grey-light: #f5f6f6;
 }
 
 * {
@@ -37,6 +37,9 @@ body {
 }
 
 .tech-stack__list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   list-style: none;
   padding-left: 0;
 }
@@ -46,4 +49,13 @@ body {
   background-color: var(--primary-dark);
   color: var(--white);
   border-radius: 10px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile .profile__image {
+  align-self: center;
 }
