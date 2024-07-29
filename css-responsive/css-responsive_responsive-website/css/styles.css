@@ -243,9 +243,17 @@ CSS when certain conditions that we declare are met - such as a certain viewport
 width, etc. */
 
 /* Media Query Tablet */
-/* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media (min-width: 800px) {
+  .card-section {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-section > * {
+    width: 45%;
+  }
+}
 
 /* Media Query Desktop */
 /* --- */
