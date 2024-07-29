@@ -50,7 +50,6 @@ ul {
   justify-content: space-between;
 }
 
-/* .navigation__menu li:last-child {
-  order:-1;
-  background-color: orange;
-} */
+.navigation__menu li:first-child {
+  order: -1;
+}
