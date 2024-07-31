@@ -25,7 +25,6 @@ Hint: you need only two lines of code in your grid container
   --grey-light: #f5f6f6;
 }
 
-
 *,
 *::before,
 *::after {
@@ -39,6 +38,8 @@ body {
 }
 
 .teaser-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
   min-width: 40rem;
   min-height: 100vh;
 
