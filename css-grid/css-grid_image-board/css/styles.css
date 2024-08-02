@@ -21,6 +21,10 @@ body {
   gap: 1rem;
   padding: 1rem;
   /* Add styles here */
+  grid-template-areas:
+    "banana apple melon"
+    "peach apple cauli"
+    "peach tomat cauli";
 }
 
 .image-board__image {
@@ -33,24 +37,30 @@ body {
 
 .image-board__image--1 {
   /* Add styles here */
+  grid-area: banana;
 }
 
 .image-board__image--2 {
   /* Add styles here */
+  grid-area: apple;
 }
 
 .image-board__image--3 {
   /* Add styles here */
+  grid-area: melon;
 }
 
 .image-board__image--4 {
   /* Add styles here */
+  grid-area: peach;
 }
 
 .image-board__image--5 {
   /* Add styles here */
+  grid-area: tomat;
 }
 
 .image-board__image--6 {
   /* Add styles here */
+  grid-area: cauli;
 }
