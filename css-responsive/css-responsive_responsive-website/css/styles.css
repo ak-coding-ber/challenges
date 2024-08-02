@@ -243,11 +243,45 @@ CSS when certain conditions that we declare are met - such as a certain viewport
 width, etc. */
 
 /* Media Query Tablet */
-/* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media (min-width: 700px) {
+  .card-section {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-section > * {
+    width: 46%;
+  }
+}
 
 /* Media Query Desktop */
-/* --- */
-/* Replace this comment with your media query. */
-/* --- */
+@media (min-width: 1200px) {
+  .card-section {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-section > * {
+    width: 46%;
+  }
+
+  .--forest {
+    width: 100%;
+  }
+
+  html {
+    padding: 0 20%;
+  }
+
+  .main-content {
+    padding: 0 0 1.5rem 0;
+  }
+
+  .main-header,
+  .navbar {
+    left: auto;
+    width: 60%;
+  }
+}
