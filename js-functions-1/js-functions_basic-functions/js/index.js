@@ -30,12 +30,12 @@ Then log all variables to the console again.
 */
 
 // --v-- write your code here --v--
-logBookData(book);
+logBookData();
 
 book.sales = book.sales + 123;
 book.rating = 10;
 
-logBookData(book);
+logBookData();
 // --^-- write your code here --^--
 
 /*
@@ -47,7 +47,7 @@ logBookData(book);
 */
 
 // --v-- write your code here --v--
-function logBookData(bookName) {
+function logBookData() {
   console.log(
     `Title: "${book.title}"\nAuthor: "${book.author}"\nRating: ${book.rating}\nSales: ${book.sales}\n`
   );
