@@ -21,9 +21,6 @@ const personAlex = {
 const nameOfAlex = personAlex.name;
 const ageOfAlex = personAlex.age;
 
-personWithNameAgeEmail.name = nameOfAlex;
-personWithNameAgeEmail.age = ageOfAlex;
-
 // EXERCISE 3
 // Change the value of name to "Alex" and the value of age to "35" by updating the object personToChange: person.existingProperty = newValue.
 
