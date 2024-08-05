@@ -3,12 +3,15 @@ console.clear();
 // EXERCISE 1
 // Modify the array exampleArray so that it contains a number and a string.
 
-const exampleArray = [25, "hello"];
+const exampleArray = [true];
+exampleArray.push(25, "hello");
+exampleArray.shift();
 
 // EXERCISE 2
 // Nest an array inside array nestedArray. After that nestedArray should contain an array as an element.
 
-const nestedArray = ["example", [25, "hello"], 10, true];
+const nestedArray = ["example", 10, true];
+nestedArray.push([25, "hello"]);
 
 // EXERCISE 3
 // Change the value of firstNumber to equal the first value of the numbers array using bracket notation.
