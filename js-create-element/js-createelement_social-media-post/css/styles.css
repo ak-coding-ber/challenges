@@ -1,0 +1,53 @@
+@import './global.css';
+
+body {
+  font-family: system-ui;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40rem;
+  gap: 2rem;
+  background-color: var(--primary-dark);
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--white);
+}
+
+.post {
+  background-color: var(--white);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.post__content {
+  margin: 0 0 1em 0;
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post__username {
+  font-size: 0.9rem;
+  color: var(--grey-dark);
+}
+
+.post__button {
+  all: unset;
+  border: 1px solid var(--grey-dark);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.post__button--liked {
+  background-color: red;
+  color: var(--white);
+  border-color: var(--white);
+}
