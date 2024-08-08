@@ -37,13 +37,15 @@ productCard.innerHTML = `
   </div>
   <footer class="product__footer">
     <span class="product__price">${price} €</span>
-    <button type="button" class="product__buy-button">Buy</button>
+    <button type="button" class="product__buy-button" data-js="buy-button-2">Buy</button>
   </footer>
 `;
 
 document.body.append(productCard);
 
 // adding event listener for Buy-button
-productCard.addEventListener("click", () => {
+buyButtonTwo = document.querySelector('[data-js="buy-button-2"]');
+
+buyButtonTwo.addEventListener("click", () => {
   console.log(`Product Name: ${name}\nPrice: ${price}`);
 });
