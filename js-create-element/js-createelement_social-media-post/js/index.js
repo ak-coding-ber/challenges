@@ -21,8 +21,6 @@ newPostText.classList.add("post__content");
 newPostFooter = document.createElement("footer");
 newPostFooter.classList.add("post__footer");
 
-newPostSection.append(newPostText, newPostFooter);
-
 newPostCreatedByInfo = document.createElement("span");
 newPostCreatedByInfo.classList.add("post__username");
 newPostCreatedByInfo.textContent = "@username";
@@ -33,5 +31,6 @@ newPostLikeButton.textContent = "♥ Like";
 newPostLikeButton.addEventListener("click", handleLikeButtonClick);
 
 newPostFooter.append(newPostCreatedByInfo, newPostLikeButton);
+newPostSection.append(newPostText, newPostFooter);
 
 document.body.append(newPostSection);
