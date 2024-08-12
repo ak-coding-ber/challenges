@@ -26,7 +26,6 @@ for (const key in languages) {
   option.value = languages[key];
   option.textContent = languages[key];
   select.append(option);
-  console.log(option.value);
 }
 // --^-- write/change code here --^--
 
