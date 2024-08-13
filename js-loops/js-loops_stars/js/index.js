@@ -2,16 +2,19 @@ console.clear();
 
 const starContainer = document.querySelector('[data-js="star-container"]');
 
-function renderStars(numberOfStars) {
+function renderStars(starsClicked) {
   // reset the star container before rerendering stars
   starContainer.innerHTML = "";
 
   //--v-- your code here --v--
-  let filledStars = numberOfStars;
-
-  for (i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     const img = document.createElement("img");
-    if (i <= filledStars) {
+
+    img.addEventListener("click", () => {
+      renderStars(i);
+    });
+
+    if (i <= starsClicked) {
       img.setAttribute("src", "./assets/star-filled.svg");
     } else {
       img.setAttribute("src", "./assets/star-empty.svg");
@@ -22,4 +25,4 @@ function renderStars(numberOfStars) {
   //--^-- your code here --^--
 }
 
-renderStars(3);
+renderStars();
