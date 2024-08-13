@@ -28,6 +28,7 @@ body {
   color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition: box-shadow 1s ease-in-out 1s, background-color 1s linear;
 }
 
 .start-button:disabled {
@@ -35,6 +36,8 @@ body {
   color: grey;
   box-shadow: none;
   cursor: not-allowed;
+  transform: rotate(360deg);
+  transition: transform 2s;
 }
 
 /* Toast */
@@ -49,12 +52,14 @@ body {
   background: rgb(71, 212, 94);
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  opacity: 25%;
 
-  transition: transform 0.5s;
+  transition: transform 0.5s, opacity 3s ease;
 }
 
 .toast--hidden {
   transform: translate3d(-150%, 0, 0);
+  opacity: 100%;
 }
 
 /* Countdown */
