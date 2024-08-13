@@ -9,7 +9,12 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+book = {
+  title: "Les Miserables",
+  author: "Victor Hugo",
+  rating: 8,
+  sales: 3000,
+};
 // --^-- write your code here --^--
 
 /*
@@ -25,7 +30,12 @@ Then log all variables to the console again.
 */
 
 // --v-- write your code here --v--
+logBookData();
 
+book.sales = book.sales + 123;
+book.rating = 10;
+
+logBookData();
 // --^-- write your code here --^--
 
 /*
@@ -37,5 +47,9 @@ Then log all variables to the console again.
 */
 
 // --v-- write your code here --v--
-
+function logBookData() {
+  console.log(
+    `Title: "${book.title}"\nAuthor: "${book.author}"\nRating: ${book.rating}\nSales: ${book.sales}\n`
+  );
+}
 // --^-- write your code here --^--
