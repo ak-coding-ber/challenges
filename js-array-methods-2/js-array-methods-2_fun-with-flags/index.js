@@ -8,17 +8,15 @@ queryInput.addEventListener("input", (event) => {
   container.innerHTML = "";
 
   const searchString = event.target.value;
-  console.log(searchString);
-  console.log(
-    countries.find((country) => country.name.startsWith(searchString))
+
+  const foundCountries = countries.filter((foundCountry) =>
+    foundCountry.name.startsWith(searchString)
   );
 
-  const foundCountry = countries.find((country) =>
-    country.name.startsWith(searchString)
-  );
-
-  if (foundCountry) {
-    const countryElement = Country(foundCountry);
-    container.append(countryElement);
-  }
+  foundCountries.forEach((foundCountry) => {
+    if (foundCountry) {
+      const countryElement = Country(foundCountry);
+      container.append(countryElement);
+    }
+  });
 });
