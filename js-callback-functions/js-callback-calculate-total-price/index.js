@@ -20,6 +20,7 @@ function calculateTotalPrice(products, extractPrice) {
     totalPrice += extractPrice(product);
   }
   console.log(`The total price is: ${totalPrice}`);
+  return totalPrice;
 }
 
 calculateTotalPrice(products, extractPrice);
