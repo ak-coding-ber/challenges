@@ -78,9 +78,13 @@ const animals = [
 ];
 
 // Hint: Besides the array method, check out the string method `startsWith()`.
-const firstAnimalStartingWithLetterG = null;
+const firstAnimalStartingWithLetterG = animals.find((animal) =>
+  animal.name.startsWith("g")
+);
 
-const indexOfAnimalWithNameLongerFive = null;
+const indexOfAnimalWithNameLongerFive = animals.findIndex(
+  (animal) => animal.name.length > 5
+);
 
 // Note:
 // - Sorting strings is slightly more complicated than sorting numbers.
@@ -91,22 +95,46 @@ const indexOfAnimalWithNameLongerFive = null;
 // Hint: sort() mutates the original array, which is bad.
 // -> Use animals.slice().sort(...) to make a copy (and the tests work).
 
-const animalsSortedAlphabetically = null;
+// in the example it's enough to do the following (since no capital letters etc. and no special signs):
+const animalsSortedAlphabetically = animals
+  .map((animal) => animal.name)
+  .slice()
+  .sort();
 
-const animalsSortedByWeightStartingWithLowest = null;
+const animalsSortedByWeightStartingWithLowest = animals
+  .map((animal) => animal.weight)
+  .sort((a, b) => a - b);
 
-const animalsSortedByWeightReversed = null;
+const animalsSortedByWeightReversed = animals
+  .map((animal) => animal.weight)
+  .sort((a, b) => a - b)
+  .reverse();
 
-const animalWithWeightMoreThanFivehundredExists = null;
+const animalWithWeightMoreThanFivehundredExists = animals.some(
+  (animal) => animal.weight > 500
+);
 
 // Hint: Filter for Europe first, then check every animal for its weight.
-const allAnimalsInEuropeWeighLessThanOnehundred = null;
+const allAnimalsInEuropeWeighLessThanOnehundred = animals.filter(
+  (animal) => animal.continents.includes("Europe") && animal.weight < 100
+);
 
 // Hint: filter + map + reduce
-const weightOfAllAnimalsInAfrica = null;
+const weightOfAllAnimalsInAfrica = animals
+  .filter((animal) => animal.continents.includes("Africa"))
+  .map((animal) => animal.weight)
+  .reduce((acc, cur) => acc + cur);
+console.log(weightOfAllAnimalsInAfrica);
 
 // Hint: As above, but divided by the number of animals in Africa.
-const averageWeightOfAllAnimalsInAfrica = null;
+const averageWeightOfAllAnimalsInAfrica =
+  animals
+    .filter((animal) => animal.continents.includes("Africa"))
+    .map((animal) => animal.weight)
+    .reduce((acc, cur) => acc + cur) /
+  animals
+    .filter((animal) => animal.continents.includes("Africa"))
+    .map((animal) => animal.weight).length;
 
 export {
   firstAnimalStartingWithLetterG,
