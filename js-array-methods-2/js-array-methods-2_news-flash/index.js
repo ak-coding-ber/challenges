@@ -5,12 +5,14 @@ import { checkFilteredNews, checkSortedNews } from "./utils/results.js";
 const container = document.querySelector('[data-js="card-container"]');
 
 // Part 1 - start here
-const filteredNews = news.filter(() => {
-  return true;
-});
+const filteredNews = news.filter((entry) =>
+  entry.categories.includes("politics")
+);
 
 // Part 2 - start here
-const sortedNews = filteredNews;
+const sortedNews = filteredNews
+  .slice()
+  .sort((a, b) => a.body.length - b.body.length);
 
 sortedNews.forEach((news) => {
   const cardElement = Card(news);
