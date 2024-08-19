@@ -18,6 +18,18 @@ export async function fetchNewColor() {
    */
 
   // --v-- your code here --v--
-
+  try {
+    const response = await fetch(
+      `https://www.thecolorapi.com/id?hex=${hexCode}`
+    );
+    if (response.ok) {
+      const data = await response.json();
+      setColorToGuess(data.name.closest_named_hex, data.name.value);
+    } else {
+      console.error("Bad Request");
+    }
+  } catch (error) {
+    console.error("An error occurred.");
+  }
   // --^-- your code here --^--
 }
