@@ -41,6 +41,24 @@ fetchDataAndRender();
 
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+async function fetchDataAndRender() {
+  try {
+    const response = await fetch("https://swapi.py4e.com/api/people");
+
+    if (response.ok) {
+      const data = await response.json();
+      data.results.forEach((element) => {
+        // to prevent that card of Luke is there twice - card is there already cause of example data
+        if (element.name === "Luke Skywalker") {
+          console.log("Luke is already there.");
+        } else {
+          renderElement(Card(element));
+        }
+      });
+    } else {
+      console.error("Bad Response");
+    }
+  } catch (error) {
+    console.error("An Error occurred");
+  }
 }
