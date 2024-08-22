@@ -22,7 +22,7 @@ export const { course } = company;
 //  2.3: 'isAdmin' property into the variable 'isAdmin' (false, if no such property exists)
 
 const user = { name: "John", years: 30 };
-export const { name, years, isAdmin = false } = user;
+export const { name, years: age, isAdmin = false } = user;
 
 // EXERCISE 3
 // Extract the variables from the dog object and
@@ -34,7 +34,7 @@ const dog = {
   age: 5,
 };
 
-const { name: dogName, breed: dogBreed, age: dogAge } = dog;
+export const { name: dogName, breed: dogBreed, age: dogAge } = dog;
 
 // EXERCISE 4
 // Extract the 'lastName' property from the person object as "personLastName".
@@ -46,7 +46,7 @@ const person = {
   firstName: "Alex",
 };
 
-const { lastName: personLastName, ...moreInformation } = person;
+export const { lastName: personLastName, ...moreInformation } = person;
 
 // EXERCISE 5
 // Rewrite the following function (logInfo) to use destructuring assignment for the three variables it creates:
@@ -59,7 +59,7 @@ const logInfo = (city) => {
   return `${name} is in ${country} and has ${numPeople} inhabitants in it.`;
 };
 
-const destructuringLogInfo = (city) => {
+export const destructuringLogInfo = (city) => {
   // (Hint: Lines 48-50 should be replaced with a single line and you shouldn't change anything else).
   // your code here
   const { name, country, population: numPeople } = city;
