@@ -18,40 +18,41 @@ data = arrayExample;
 console.clear();
 
 // Log what typeof function returns for the example chosen above
-console.log("typeof:", typeof data, "\n");
+const datatype = typeof data;
+console.log("typeof:", datatype, "\n");
 
 // Define what should be done for different scenarios / different data types
 switch (true) {
-  case typeof data == "undefined":
+  case datatype === "undefined":
     console.log("undefined!");
     break;
-  case data == null:
+  case data === null:
     console.log("null!");
     break;
   //if datatype is number check ALSO if it is NaN (which is also dtype "number"), if yes --> log "not a number" if no --> check next conditions
-  case typeof data == "number" && isNaN(data):
+  case datatype === "number" && isNaN(data):
     console.log("not a number!");
     break;
-  case typeof data == "number":
+  case datatype === "number":
     console.log("number!");
     break;
-  case typeof data == "string":
+  case datatype === "string":
     console.log("string!");
     break;
-  case typeof data == "boolean":
+  case datatype === "boolean":
     console.log("boolean!");
     break;
-  case typeof data == "bigint":
+  case datatype === "bigint":
     console.log("bigint!");
     break;
-  case typeof data == "function":
+  case datatype === "function":
     console.log("function!");
     break;
   //first check if object is ALSO an array --> if yes log "array!" if not check next condition
-  case typeof data == "object" && Array.isArray(data):
+  case datatype === "object" && Array.isArray(data):
     console.log("array!");
     break;
-  case typeof data == "object":
+  case datatype === "object":
     console.log("object!");
     break;
   default:
