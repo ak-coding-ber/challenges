@@ -1,9 +1,18 @@
 import "./App.css";
+import { useState } from "react";
 
 export default function App() {
-  let code = "?";
+  const [code, updateCode] = useState("?");
 
   const validCode = "🐡🐠🐋";
+
+  function handleClick(icon) {
+    if (code === "?") {
+      updateCode(icon);
+    } else {
+      updateCode(code + icon);
+    }
+  }
 
   return (
     <div className="container">
@@ -12,6 +21,7 @@ export default function App() {
           type="button"
           onClick={() => {
             console.log("Update Code!");
+            handleClick("🐡");
           }}
         >
           <span role="img" aria-label="Pufferfish">
@@ -22,6 +32,7 @@ export default function App() {
           type="button"
           onClick={() => {
             console.log("Update Code!");
+            handleClick("🐋");
           }}
         >
           <span role="img" aria-label="Whale">
@@ -32,6 +43,7 @@ export default function App() {
           type="button"
           onClick={() => {
             console.log("Update Code!");
+            handleClick("🐠");
           }}
         >
           <span role="img" aria-label="Clownfish">
@@ -44,6 +56,7 @@ export default function App() {
         type="button"
         onClick={() => {
           console.log("Reset Code!");
+          updateCode("?");
         }}
       >
         Reset
