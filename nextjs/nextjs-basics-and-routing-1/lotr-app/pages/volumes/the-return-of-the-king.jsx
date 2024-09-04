@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { introduction, volumes } from "../../lib/data";
 
 export default function TheReturnOfTheKing() {
@@ -16,7 +17,16 @@ export default function TheReturnOfTheKing() {
           <li key={index}>{book.title}</li>
         ))}
       </ul>
-      <Link href="/volumes/the-two-towers">Previous Volume</Link>
+      <Image
+        src="/images/the-return-of-the-king.png"
+        width={140}
+        height={230}
+        alt="Cover of the Book 'The Return of the King'"
+      />
+      <br />
+      <Link href="/volumes/the-two-towers" width="140px">
+        Previous Volume
+      </Link>
     </>
   );
 }
