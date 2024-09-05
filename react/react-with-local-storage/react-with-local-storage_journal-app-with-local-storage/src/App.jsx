@@ -1,10 +1,10 @@
-import { useState } from "react";
 import EntriesSection from "./components/EntriesSection";
 import EntryForm from "./components/EntryForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { uid } from "uid";
 import "./App.css";
+import useLocalStorageState from "use-local-storage-state";
 
 const initialEntries = [
   {
@@ -37,8 +37,14 @@ const initialEntries = [
 ];
 
 function App() {
-  const [entries, setEntries] = useState(initialEntries);
-  const [filter, setFilter] = useState("all"); // "all" or "favorites"
+  const [entries, setEntries] = useLocalStorageState("entries", {
+    defaultValue: initialEntries,
+  });
+
+  // This line makes sure the filter is still active and filter tab is still selected after user closed tab / browser during that state
+  const [filter, setFilter] = useLocalStorageState("filter", {
+    defaultValue: "all",
+  }); // "all" or "favorites"
 
   function handleAddEntry(newEntry) {
     const date = new Date().toLocaleDateString("en-us", {
@@ -63,6 +69,7 @@ function App() {
     setFilter("all");
   }
 
+  console.log(entries);
   const favoriteEntries = entries.filter((entry) => entry.isFavorite);
 
   return (
