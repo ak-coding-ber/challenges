@@ -13,8 +13,24 @@ function showTosError() {
   tosError.removeAttribute("hidden");
 }
 
+function hideSuccessMessage() {
+  successMessage.setAttribute("hidden", "");
+}
+
+function showSuccessMessage() {
+  successMessage.removeAttribute("hidden");
+}
+
 hideTosError();
-successMessage.style.display = "none";
+hideSuccessMessage();
+
+tosCheckbox.addEventListener("change", (event) => {
+  if (event.target.checked) {
+    hideTosError();
+    return;
+  }
+  showTosError();
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -25,11 +41,11 @@ form.addEventListener("submit", (event) => {
 
   if (tosChecked) {
     hideTosError();
-    successMessage.style.display = "block";
     event.target.reset();
+    showSuccessMessage();
   } else {
     showTosError();
-    successMessage.style.display = "none";
+    hideSuccessMessage();
     return;
   }
   // --^-- write your code here --^--
