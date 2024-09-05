@@ -13,6 +13,7 @@ const initialEntries = [
     motto: "We are in a state of chaos",
     notes:
       "Today I learned about React State. It was fun! I can't wait to learn more.",
+    isFavorite: false,
   },
   {
     id: 999,
@@ -20,6 +21,7 @@ const initialEntries = [
     motto: "Props, Props, Props",
     notes:
       "Today I learned about React Props. Mad props to everyone who understands this!",
+    isFavorite: false,
   },
   {
     id: 998,
@@ -27,17 +29,30 @@ const initialEntries = [
     motto: "How to nest components online fast",
     notes:
       "Today I learned about React Components and how to nest them like a pro. Application design is so much fun!",
+    isFavorite: false,
   },
   {
     id: 997,
     date: "Feb 2, 2025",
     motto: "I'm a React Developer",
     notes: "My React-ion when I learned about React: Yay!",
+    isFavorite: false,
   },
 ];
 
 function App() {
   const [entries, setEntries] = useState(initialEntries);
+  const [filter, setFilter] = useState("all");
+
+  const favoriteEntries = entries.filter((entry) => entry.isFavorite);
+
+  function handleShowFavoriteEntries() {
+    setFilter("favorites");
+  }
+
+  function handleShowAllEntries() {
+    setFilter("all");
+  }
 
   function handleAddEntry(newEntry) {
     const date = new Date().toLocaleDateString("en-us", {
@@ -60,8 +75,13 @@ function App() {
       <main className="app__main">
         <EntryForm onAddEntry={handleAddEntry} />
         <EntriesSection
-          entries={entries}
+          entries={filter === "all" ? entries : favoriteEntries}
           onToggleFavorite={handleToggleFavorite}
+          onShowAllEntries={handleShowAllEntries}
+          onShowFavoriteEntries={handleShowFavoriteEntries}
+          filter={filter}
+          countAllEntries={entries.length}
+          countFavoriteEntries={favoriteEntries.length}
         />
       </main>
       <Footer />
