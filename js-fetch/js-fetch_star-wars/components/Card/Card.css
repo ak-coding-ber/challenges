@@ -1,0 +1,13 @@
+.card {
+  padding: 20px;
+  border-radius: 14px;
+  background-color: var(--grey-light);
+  display: grid;
+  gap: 10px;
+  box-shadow: 3px 3px 9px var(--secondary);
+}
+
+.card * {
+  padding: 0;
+  margin: 0;
+}

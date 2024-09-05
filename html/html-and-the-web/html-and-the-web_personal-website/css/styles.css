@@ -1,0 +1,45 @@
+/*
+#D8EFD3
+#95D2B3
+#55AD9B
+#F1F8E8
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f8e8;
+}
+
+h1,
+h2 {
+  color: white;
+  text-align: center;
+  background-color: #55ad9b;
+}
+
+#heading {
+  border-radius: 10px;
+}
+
+#me-1 {
+  padding-left: 25%;
+  margin: 0;
+}
+
+nav {
+  text-align: center;
+  color: #55ad9b;
+}
+
+nav a {
+  color: white;
+  font-size: 25px;
+  margin: 5px 7px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #95d2b3;
+  text-decoration-line: none;
+}
