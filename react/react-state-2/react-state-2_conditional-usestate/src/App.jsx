@@ -3,6 +3,8 @@ import { useState } from "react";
 
 export default function App() {
   const [showMessage, setShowMessage] = useState(false);
+  const [message, setMessage] = useState("Secret message incoming...");
+
   if (!showMessage) {
     return (
       <div className="container">
@@ -22,8 +24,6 @@ export default function App() {
       </div>
     );
   }
-
-  const [message, setMessage] = useState("Secret message incoming...");
 
   return (
     <div className="container">
