@@ -84,9 +84,9 @@ spinButton.addEventListener("click", async () => {
     }
   } catch {
     result.setMachineChoked();
+  } finally {
+    spinButton.disabled = false;
   }
-
-  spinButton.disabled = false;
 });
 
 /**
