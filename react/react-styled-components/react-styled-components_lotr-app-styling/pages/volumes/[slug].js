@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
+import styled from "styled-components";
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -17,26 +18,28 @@ export default function VolumeDetail() {
     return null;
   }
 
-  const { title, description, cover, books } = volume;
+  const { title, description, cover, books, color } = volume;
 
   return (
     <>
       <Link href="/volumes">← All Volumes</Link>
       <h1>{title}</h1>
       <p>{description}</p>
-      <ul>
-        {books.map(({ ordinal, title }) => (
-          <li key={title}>
-            {ordinal}: <strong>{title}</strong>
-          </li>
-        ))}
-      </ul>
-      <Image
-        src={cover}
-        alt={`Cover image of ${title}`}
-        width={140}
-        height={230}
-      />
+      <StyledSection $color={color}>
+        <ul>
+          {books.map(({ ordinal, title }) => (
+            <li key={title}>
+              {ordinal}: <strong>{title}</strong>
+            </li>
+          ))}
+        </ul>
+        <Image
+          src={cover}
+          alt={`Cover image of ${title}`}
+          width={140}
+          height={230}
+        />
+      </StyledSection>
       {previousVolume ? (
         <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
@@ -54,3 +57,8 @@ export default function VolumeDetail() {
     </>
   );
 }
+
+const StyledSection = styled.section`
+  background-color: ${({ $color }) => $color};
+  display: flex;
+`;
