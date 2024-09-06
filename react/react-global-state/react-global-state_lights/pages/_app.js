@@ -16,6 +16,7 @@ const initial = [
 export default function App({ Component, pageProps }) {
   const [lights, setLights] = useState(initial);
   const lightsCount = lights.filter((light) => light.isOn).length;
+  const isDimmed = lights.filter((light) => light.isOn).length === 0;
 
   function handleToggle(id) {
     setLights(
@@ -45,7 +46,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <Layout>
+    <Layout isDimmed={isDimmed}>
       <GlobalStyle />
       <Component
         {...pageProps}
