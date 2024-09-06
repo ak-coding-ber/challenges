@@ -29,19 +29,19 @@ const onlyCardWithIdTwo = cards.filter((card) => {
 console.log(onlyCardWithIdTwo);
 
 const allCardsWith3Tags = cards.filter((card) => {
-  return card.tags.length == 3;
+  return card.tags.length === 3;
 });
 console.log(allCardsWith3Tags);
 
 const allCardsThatAreNotBookmarked = cards.filter((card) => {
-  return card.isBookmarked == false;
+  return !card.isBookmarked;
 });
 console.log(allCardsThatAreNotBookmarked);
 
 const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((card) => {
   return (
     (card.tags.includes("html") || card.tags.includes("js")) &&
-    card.isBookmarked == true
+    card.isBookmarked
   );
 });
 console.log(allCardsWithTagsHTMLOrJSThatAreBookmarked);
