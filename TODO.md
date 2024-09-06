@@ -36,3 +36,17 @@
 
 [Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-with-local-storage/react-with-local-storage.md) <br>
 [Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-with-local-storage/challenges-react-with-local-storage.md)
+
+## REACT Component Testing
+
+<code>Scorekeeper</code>
+
+[Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-component-testing/react-component-testing.md) <br>
+[Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-component-testing/challenges-react-component-testing.md)
+
+## REACT Styled Components
+
+<code>Lord of the Rings Fanpage</code>
+
+[Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-styled-components/react-styled-components.md) <br>
+[Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-styled-components/challenges-react-styled-components.md)
