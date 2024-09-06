@@ -1,0 +1,23 @@
+.card {
+  width: 70%;
+  padding: 20px;
+  margin-inline: auto;
+  margin-block: 20px;
+  background-color: var(--grey-light);
+}
+
+.card--orange {
+  background-color: orange;
+}
+
+.card--red {
+  background-color: red;
+}
+
+.card--yellow {
+  background-color: yellow;
+}
+
+.card--purple {
+  background-color: purple;
+}
