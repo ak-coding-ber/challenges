@@ -61,3 +61,10 @@
 <code>Further Challenges (REACT Docs)</code>
 
 [Challenges-React-Docs](https://react.dev/learn/updating-arrays-in-state#challenges)
+
+## AGILE & User Stories
+
+<code>Agile Workflow and User Stories</code>
+
+[Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/agile-workflow-and-user-stories/agile-workflow-and-user-stories.md) <br>
+[Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/agile-workflow-and-user-stories/challenges-agile-workflow-and-user-stories.md)
