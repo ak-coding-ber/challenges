@@ -50,3 +50,14 @@
 
 [Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-styled-components/react-styled-components.md) <br>
 [Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-styled-components/challenges-react-styled-components.md)
+
+## REACT Immutable State
+
+<code>Car Race</code>
+
+[Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-immutable-state/react-immutable-state.md) <br>
+[Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/react-immutable-state/challenges-react-immutable-state.md)
+
+<code>Further Challenges (REACT Docs)</code>
+
+[Challenges-React-Docs](https://react.dev/learn/updating-arrays-in-state#challenges)
