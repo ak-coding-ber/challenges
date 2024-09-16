@@ -68,3 +68,11 @@
 
 [Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/agile-workflow-and-user-stories/agile-workflow-and-user-stories.md) <br>
 [Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/agile-workflow-and-user-stories/challenges-agile-workflow-and-user-stories.md)
+
+## Express Basics
+
+<code>Fake Login</code>
+
+[Handout](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/express-basics/express-basics.md) <br>
+[Challenges](https://github.com/spiced-academy/sumac-web-dev/blob/main/sessions/express-basics/challenges-express-basics.md)
+[Other Ressources](https://github.com/spiced-academy/sumac-web-dev/tree/main/sessions/express-basics)
