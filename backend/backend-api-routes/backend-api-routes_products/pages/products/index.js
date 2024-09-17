@@ -23,13 +23,25 @@ export default function Products() {
     return <div>{error.message}</div>;
   }
 
-  console.log(products);
-
   return (
     <>
       <ul>
         {products.map((product) => {
-          return <li key={product.name}>Name: {product.name}</li>;
+          return (
+            <li key={product.id}>
+              id: {product.id}
+              <br />
+              Name: {product.name}
+              <br />
+              Category: {product.category}
+              <br />
+              Price: {`${product.price} ${product.currency}`}
+              <br />
+              Description: {product.description}
+              <br />
+              <br />
+            </li>
+          );
         })}
       </ul>
     </>
