@@ -27,7 +27,17 @@ export default function HomePage() {
     return <div>{error.message}</div>;
   }
 
-  console.log(character);
-
-  return <div>{character.firstName}</div>;
+  return (
+    <p>
+      {character.firstName}
+      <br />
+      {character.lastName}
+      <br />
+      {character.twitterName}
+      <br />
+      {character.geoHash}
+      <br />
+      <br />
+    </p>
+  );
 }
