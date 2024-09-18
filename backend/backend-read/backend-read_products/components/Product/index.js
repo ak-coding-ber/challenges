@@ -24,6 +24,25 @@ export default function Product() {
       <p>
         Price: {data.price} {data.currency}
       </p>
+      {data.reviews.length === 0 ? (
+        <p style={{ color: "grey" }}>No Reviews yet.</p>
+      ) : (
+        <ul>
+          <h2>Comments</h2>
+          {data.reviews.map((review, index) => (
+            <li key={index}>
+              <strong>{review.title}</strong>
+              <br />
+              {review.text}
+              <br />
+              <br />
+              Rating: {review.rating}
+              <br />
+              <br />
+            </li>
+          ))}
+        </ul>
+      )}
       <StyledLink href="/">Back to all</StyledLink>
     </ProductCard>
   );
