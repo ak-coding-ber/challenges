@@ -51,7 +51,7 @@ export default function Product() {
       {isEditMode && (
         <ProductForm
           onSubmit={handleEditProduct}
-          value={data.product}
+          prevProductInfo={data}
           isEditMode={true}
         />
       )}
