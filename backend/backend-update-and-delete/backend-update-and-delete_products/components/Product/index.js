@@ -30,6 +30,14 @@ export default function Product() {
     }
   }
 
+  async function handleDeleteProduct(event) {
+    event.preventDefault();
+    const response = await fetch(`/api/products/${id}`, { method: "DELETE" });
+    if (response.ok) {
+      router.push("/");
+    }
+  }
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -55,6 +63,11 @@ export default function Product() {
           isEditMode={true}
         />
       )}
+      <button type="button" onClick={handleDeleteProduct}>
+        <span role="img" aria-label="A cross indicating deletion">
+          ❌
+        </span>
+      </button>
       <h2>{data.name}</h2>
       <p>Description: {data.description}</p>
       <p>
