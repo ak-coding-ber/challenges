@@ -1,24 +1,25 @@
-var addressBook = [];
+"use strict";
+let addressBook = [];
 // for the purpose of practicing TypeScript I choose a very simple approach for temporary id management here
 // I am aware that there is more efficient ways of automatic id assignment and storage
-var idCounter = 1;
+let idCounter = 1;
 function addContact(contact) {
     // make sure that no contact id is being used twice
-    if (addressBook.some(function (entry) { return entry.id === contact.id; })) {
+    if (addressBook.some((entry) => entry.id === contact.id)) {
         // approach for small datasets and little amount of erased entries:
         // increase idCount until an id is found that is not yet in the contacts array
-        while (addressBook.some(function (entry) { return entry.id === idCounter; })) {
+        while (addressBook.some((entry) => entry.id === idCounter)) {
             idCounter++;
         }
-        console.log("Contact id is already existing. Assigning new id:".concat(idCounter));
+        console.log(`Contact id is already existing. Assigning new id:${idCounter}`);
         contact.id = idCounter;
     }
     addressBook.push(contact);
 }
 function removeContact(id) {
     // check if contact id is existing in the array
-    if (addressBook.some(function (contact) { return contact.id === id; })) {
-        addressBook = addressBook.filter(function (contact) { return contact.id !== id; });
+    if (addressBook.some((contact) => contact.id === id)) {
+        addressBook = addressBook.filter((contact) => contact.id !== id);
     }
     else {
         console.log("ID is not in list of contacts.");
@@ -28,8 +29,8 @@ function searchContacts(query) {
     // if no search string should be provided at all: return all contacts
     if (!query)
         return addressBook;
-    var queryNormalized = query.trim().toLowerCase();
-    return addressBook.filter(function (contact) {
+    const queryNormalized = query.trim().toLowerCase();
+    return addressBook.filter((contact) => {
         return (contact.name.trim().toLowerCase().includes(queryNormalized) ||
             contact.email.trim().toLowerCase().includes(queryNormalized) ||
             (contact.phone && contact.phone.trim().includes(queryNormalized)) //check first if property phone exists
