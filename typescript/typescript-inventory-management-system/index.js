@@ -7,7 +7,7 @@ function addItem(item) {
             // increment the id until there is a free one that is not already taken
             itemId++;
         }
-        console.log(`Id ${item.id} is already existing. Next free ID was assigned instead: ${itemId}`);
+        console.log(`Id ${item.id} is already existing. Next free ID was assigned instead: --> ${itemId}.`);
         item.id = itemId.toString();
     }
     inventory.push(item);
@@ -32,7 +32,14 @@ function getItem(id) {
     }
 }
 function filterItemsByCategory(category) {
-    // TODO: Implement the filterItemsByCategory function (Optional)
+    if (typeof category !== "string") {
+        // return warning and empty array if input was not of type string
+        console.log("\nWarning: Input for filterItemsByCategory() must be of type string.");
+        return [];
+    }
+    const filteredResult = inventory.filter((item) => item.category.trim().toLowerCase().includes(category.trim().toLowerCase()));
+    console.log("\nFiltered inventory:\n");
+    return filteredResult;
 }
 addItem({
     id: "1",
@@ -66,3 +73,5 @@ updateItemQuantity("2", 23);
 console.log(inventory);
 // shows item with id 2: name: Guitar
 getItem("2");
+//Filter for items of category 'Instruments'
+console.log(filterItemsByCategory("instruments"));
