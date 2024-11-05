@@ -57,12 +57,13 @@ console.log("\nTransformed Data:\n\n", transformData(data, rules));
 // empty rules object, should return original data
 console.log("\nTransformed Data - no ruleset:\n\n", transformData(data, {}));
 
-// property in rules not in data
-const dataWithMissingProps = [{ id: 1, age: 28 }];
-const partialRules = { name: (value: string) => value.toUpperCase() };
-//uncomment to test
+// property in rules not in data - uncomment to test
+
+// const dataWithMissingProps = [{ id: 1, age: 28 }];
+// const partialRules = { name: (value: string) => value.toUpperCase() };
 // console.log(transformData(dataWithMissingProps, partialRules));
 
 // mismatched types – uncommenting should throw an error (see line 1)
+
 // const wrongRules = { age: (value: number) => value.toString() }; // Expected number, returns string
 // console.log(transformData(data, wrongRules));
