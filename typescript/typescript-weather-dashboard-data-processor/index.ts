@@ -29,3 +29,24 @@ function filterByDescription(
 ): ProcessedWeatherData[] {
   // TODO: Implement the function
 }
+
+// example data
+const data: WeatherData[] = [
+  {
+    temperature: 23,
+    humidity: 55,
+    description: "Clear skies",
+  },
+  {
+    temperature: [18, 21, 19],
+    humidity: 70,
+    windSpeed: 15,
+    description: "Partly cloudy with occasional sunny breaks",
+  },
+  {
+    temperature: [28, 20, 35, 25],
+    humidity: 80,
+    windSpeed: 20,
+    description: "Hot and humid conditions with light winds",
+  },
+];
