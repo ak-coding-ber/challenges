@@ -1,13 +1,32 @@
 "use strict";
+function checkIsWindy(data, threshold = 15) {
+    return data.windSpeed !== undefined && data.windSpeed > threshold;
+}
 function processWeatherData(data) {
-    // TODO: Implement the function
+    console.log(Array.isArray(data[0].temperature));
+    return data.map((entry) => {
+        // check if data.temperature is a number or an array of numbers - make it an array if only one value exists
+        const temperatures = Array.isArray(entry.temperature)
+            ? entry.temperature
+            : [entry.temperature];
+        // round average temperature to 2 decimal places
+        const avgTemperature = Math.round((temperatures.reduce((sum, temp) => sum + temp, 0) /
+            temperatures.length) *
+            100) / 100;
+        const maxTemperature = Math.max(...temperatures);
+        const minTemperature = Math.min(...temperatures);
+        const detailedDescription = entry.description || "No description available";
+        const isWindy = checkIsWindy(entry);
+        return {
+            avgTemperature,
+            maxTemperature,
+            minTemperature,
+            detailedDescription,
+            isWindy,
+        };
+    });
 }
-function isWindy(data, threshold = 25) {
-    // TODO: Implement the type guard
-}
-function filterByDescription(data, description) {
-    // TODO: Implement the function
-}
+function filterByDescription(data, description) { }
 // example data
 const data = [
     {
@@ -28,3 +47,4 @@ const data = [
         description: "Hot and humid conditions with light winds",
     },
 ];
+console.log(processWeatherData(data));

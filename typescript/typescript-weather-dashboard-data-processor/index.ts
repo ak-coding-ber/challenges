@@ -13,22 +13,46 @@ interface ProcessedWeatherData {
   isWindy: boolean;
 }
 
+function checkIsWindy(data: WeatherData, threshold: number = 15): boolean {
+  return data.windSpeed !== undefined && data.windSpeed > threshold;
+}
+
 function processWeatherData<T extends WeatherData>(
   data: T[]
 ): ProcessedWeatherData[] {
-  // TODO: Implement the function
-}
+  console.log(Array.isArray(data[0].temperature));
 
-function isWindy(data: WeatherData, threshold: number = 25): boolean {
-  // TODO: Implement the type guard
+  return data.map((entry) => {
+    // check if data.temperature is a number or an array of numbers - make it an array if only one value exists
+    const temperatures = Array.isArray(entry.temperature)
+      ? entry.temperature
+      : [entry.temperature];
+    // round average temperature to 2 decimal places
+    const avgTemperature =
+      Math.round(
+        (temperatures.reduce((sum, temp) => sum + temp, 0) /
+          temperatures.length) *
+          100
+      ) / 100;
+    const maxTemperature = Math.max(...temperatures);
+    const minTemperature = Math.min(...temperatures);
+    const detailedDescription = entry.description || "No description available";
+    const isWindy = checkIsWindy(entry);
+
+    return {
+      avgTemperature,
+      maxTemperature,
+      minTemperature,
+      detailedDescription,
+      isWindy,
+    };
+  });
 }
 
 function filterByDescription(
   data: ProcessedWeatherData[],
   description: string
-): ProcessedWeatherData[] {
-  // TODO: Implement the function
-}
+): ProcessedWeatherData[] {}
 
 // example data
 const data: WeatherData[] = [
@@ -50,3 +74,5 @@ const data: WeatherData[] = [
     description: "Hot and humid conditions with light winds",
   },
 ];
+
+console.log(processWeatherData(data));
