@@ -1,9 +1,9 @@
-import styles from "./Header.module.css";
+import "./Header.css";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <h1>JOURNAL</h1>
+    <header className="header">
+      <h1 className="header__text">JOURNAL</h1>
     </header>
   );
 }
