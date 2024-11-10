@@ -1,5 +1,5 @@
-import "./Form.css";
-import CreateButton from "./CreateButton";
+import "./NewEntryForm.css";
+import CreateNewEntryButton from "./CreateNewEntryButton";
 
 export default function Form() {
   return (
@@ -17,7 +17,7 @@ export default function Form() {
         Notes
       </label>
       <textarea id="notes" className="newEntryForm__textarea" name="notes" />
-      <CreateButton />
+      <CreateNewEntryButton />
     </form>
   );
 }
