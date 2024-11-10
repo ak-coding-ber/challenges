@@ -1,4 +1,4 @@
-.button__createNewEntry {
+.newEntryForm__button--create {
   width: 50%;
   background-color: var(--color-nemo);
   color: var(--color-foam);
