@@ -1,0 +1,36 @@
+.entriesAndTabs__tab {
+  display: flex;
+}
+
+.entriesAndTabs__tab--button {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 0 6px;
+}
+
+.entriesAndTabs__tab--buttonActive {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  color: var(--color-nemo);
+  padding: 0 6px;
+}
+
+.entriesAndTabs__tab--count {
+  background-color: var(--color-water-10);
+  color: var(--color-granite);
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.entriesAndTabs__tab--countActive {
+  background-color: var(--color-nemo);
+  color: var(--color-foam);
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0;
+}
