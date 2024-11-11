@@ -1,12 +1,15 @@
-import NewEntryForm from "./NewEntryForm";
-import EntriesAndTabs from "./EntriesAndTabs";
 import "./Content.css";
+
+import NewEntryForm from "./NewEntryForm";
+import Tabs from "./Tabs";
+import EntryList from "./EntryList";
 
 export default function Content() {
   return (
     <main className="content">
       <NewEntryForm />
-      <EntriesAndTabs />
+      <Tabs />
+      <EntryList />
     </main>
   );
 }
