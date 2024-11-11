@@ -29,3 +29,7 @@
   border: none;
   border-top: 1px solid var(--color-water-10);
 }
+
+.entry:last-child .entry__divider {
+  display: none;
+}
