@@ -1,0 +1,36 @@
+.tab {
+  display: flex;
+}
+
+.tab__button {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 0 6px;
+}
+
+.tab__button--active {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  color: var(--color-nemo);
+  padding: 0 6px;
+}
+
+.tab__count {
+  background-color: var(--color-water-10);
+  color: var(--color-granite);
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.tab__count--active {
+  background-color: var(--color-nemo);
+  color: var(--color-foam);
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0;
+}

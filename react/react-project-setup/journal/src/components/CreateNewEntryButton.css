@@ -1,12 +1,12 @@
-.button__create {
-  width: 50%;
+.newEntryForm__button--create {
+  width: 160px;
   background-color: var(--color-nemo);
   color: var(--color-foam);
-  padding: 18px 40px 18px 40px;
+  padding: 16px 40px 16px 40px;
   border: 1px solid var(--color-nemo);
   border-radius: 5px;
-  font-weight: 550;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 18px;
   letter-spacing: 0.5px;
   align-self: center;
 }
