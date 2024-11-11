@@ -29,6 +29,7 @@
   padding: 20px;
   margin-bottom: 32px;
   font-family: var(--font-family);
+  height: 150px;
 }
 
 .newEntryForm__textarea:focus {

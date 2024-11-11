@@ -4,6 +4,7 @@
 
 .entry__date {
   line-height: inherit;
+  font-weight: 600;
 }
 
 .entry__heading {
