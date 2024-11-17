@@ -1,0 +1,2 @@
+# don't track node modules in this folder
+/node_modules
