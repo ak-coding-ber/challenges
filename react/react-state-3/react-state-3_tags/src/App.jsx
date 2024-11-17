@@ -6,10 +6,18 @@ import "./App.css";
 export default function App() {
   const [tags, setTags] = useState(["JavaScript", "React", "CSS", "HTML"]);
 
+  function handleAddTag(newTag) {
+    setTags([...tags, newTag]);
+  }
+
+  function handledeleteTag(tagToRemove) {
+    setTags(() => tags.filter((tag) => tag !== tagToRemove));
+  }
+
   return (
     <main className="app">
-      <Form />
-      <List tags={tags} />
+      <Form onAddTag={handleAddTag} />
+      <List tags={tags} onDeleteTag={handledeleteTag} />
     </main>
   );
 }

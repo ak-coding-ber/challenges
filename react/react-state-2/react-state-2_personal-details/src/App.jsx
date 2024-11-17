@@ -1,17 +1,26 @@
 import "./App.css";
 import Form from "./components/Form.jsx";
+import { useState } from "react";
 
 export default function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  function handleCreateUser(user, mail) {
+    setName(user);
+    setEmail(mail);
+  }
+
   return (
     <div className="container">
       <h1>Personal Details Form</h1>
-      <Form />
+      <Form onCreateUser={handleCreateUser} />
       <h2>Your submitted details:</h2>
       <p>
-        Name: <span className="output">John doe</span>
+        Name: <span className="output">{name}</span>
       </p>
       <p>
-        Email: <span className="output">John@Doe.com</span>
+        Email: <span className="output">{email}</span>
       </p>
     </div>
   );
