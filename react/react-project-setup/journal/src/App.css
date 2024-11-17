@@ -1,0 +1,8 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  place-items: center;
+  width: 100%;
+  padding: 70px 16px;
+}
