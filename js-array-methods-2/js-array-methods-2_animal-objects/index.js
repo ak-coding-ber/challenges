@@ -95,11 +95,15 @@ const indexOfAnimalWithNameLongerFive = animals.findIndex(
 // Hint: sort() mutates the original array, which is bad.
 // -> Use animals.slice().sort(...) to make a copy (and the tests work).
 
-// in the example it's enough to do the following (since no capital letters etc. and no special signs):
-const animalsSortedAlphabetically = animals
-  .map((animal) => animal.name)
-  .slice()
-  .sort();
+const animalsSortedAlphabetically = animals.slice().sort((a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  }
+  if (a.name > b.name) {
+    return 1;
+  }
+  return 0;
+});
 
 const animalsSortedByWeightStartingWithLowest = animals
   .map((animal) => animal.weight)
@@ -124,17 +128,15 @@ const weightOfAllAnimalsInAfrica = animals
   .filter((animal) => animal.continents.includes("Africa"))
   .map((animal) => animal.weight)
   .reduce((acc, cur) => acc + cur);
-console.log(weightOfAllAnimalsInAfrica);
 
 // Hint: As above, but divided by the number of animals in Africa.
 const averageWeightOfAllAnimalsInAfrica =
   animals
     .filter((animal) => animal.continents.includes("Africa"))
-    .map((animal) => animal.weight)
-    .reduce((acc, cur) => acc + cur) /
-  animals
-    .filter((animal) => animal.continents.includes("Africa"))
-    .map((animal) => animal.weight).length;
+    .reduce((total, animal) => total + animal.weight, 0) /
+  animals.filter((animal) => animal.continents.includes("Africa")).length;
+
+console.log(averageWeightOfAllAnimalsInAfrica);
 
 export {
   firstAnimalStartingWithLetterG,
