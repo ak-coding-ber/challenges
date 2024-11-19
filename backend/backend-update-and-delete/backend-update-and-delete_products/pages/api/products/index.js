@@ -14,18 +14,16 @@ export default async function handler(request, response) {
       const productData = request.body;
 
       if (!productData.name || !productData.price || !productData.description) {
-        return response
-          .status(400)
-          .json({
-            error:
-              "Data not saved. All fields are required. Please fill out all input fields.",
-          });
+        return response.status(400).json({
+          error:
+            "Data not saved. All fields are required. Please fill out all input fields.",
+        });
       }
       const product = new Product(productData);
       await product.save();
       return response.status(201).json({ status: "Product created." });
     }
   } catch (error) {
-    // console.error(error);
+    console.error("Error on Serverside:", error);
   }
 }

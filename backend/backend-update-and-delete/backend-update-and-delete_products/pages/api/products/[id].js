@@ -1,5 +1,6 @@
 import dbConnect from "../../../db/connect";
 import Product from "../../../db/models/Product";
+import Review from "@/db/models/Review";
 
 export default async function handler(request, response) {
   try {
@@ -31,7 +32,7 @@ export default async function handler(request, response) {
     }
 
     if (request.method === "DELETE") {
-      const productToDelete = await Product.findByIdAndDelete(id);
+      const productToDelete = await Product.findById(id);
 
       if (!productToDelete) {
         return response.status(404).json({
@@ -39,8 +40,14 @@ export default async function handler(request, response) {
         });
       }
 
+      // Delete related reviews
+      await Review.deleteMany({ _id: { $in: productToDelete.reviews } });
+
+      // Delete the product
+      await Product.findByIdAndDelete(id);
+
       return response.status(200).json({
-        message: "Product successfully deleted.",
+        message: "Product and all related reviews were successfully deleted.",
         deletedProduct: productToDelete,
       });
     }
