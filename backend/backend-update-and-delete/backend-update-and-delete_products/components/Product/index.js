@@ -11,7 +11,10 @@ export default function Product() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { data, isLoading, mutate } = useSWR(`/api/products/${id}`);
+  const { data, isLoading, mutate } = useSWR(id ? `/api/products/${id}` : null);
+
+  // makes sure there is no attempt to fetch an item that just has been erased
+  mutate();
 
   async function handleEditProduct(event) {
     event.preventDefault();
@@ -39,7 +42,6 @@ export default function Product() {
     const response = await fetch(`/api/products/${id}`, { method: "DELETE" });
 
     if (response.ok) {
-      mutate();
       router.push("/");
     }
   }
