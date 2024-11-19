@@ -27,13 +27,19 @@ export default function Product() {
     });
     if (response.ok) {
       mutate();
+    } else {
+      console.error(response.status);
     }
+
+    const responseData = await response.json();
+    alert(responseData.message);
   }
 
-  async function handleDeleteProduct(event) {
-    event.preventDefault();
+  async function handleDeleteProduct(id) {
     const response = await fetch(`/api/products/${id}`, { method: "DELETE" });
+
     if (response.ok) {
+      mutate();
       router.push("/");
     }
   }
@@ -56,6 +62,11 @@ export default function Product() {
       >
         ✏
       </button>
+      <button type="button" onClick={() => handleDeleteProduct(id)}>
+        <span role="img" aria-label="A cross indicating deletion">
+          ❌
+        </span>
+      </button>{" "}
       {isEditMode && (
         <ProductForm
           onSubmit={handleEditProduct}
@@ -63,17 +74,12 @@ export default function Product() {
           isEditMode={true}
         />
       )}
-      <button type="button" onClick={handleDeleteProduct}>
-        <span role="img" aria-label="A cross indicating deletion">
-          ❌
-        </span>
-      </button>
       <h2>{data.name}</h2>
       <p>Description: {data.description}</p>
       <p>
         Price: {data.price} {data.currency}
       </p>
-      {data.reviews.length > 0 && <Comments reviews={data.reviews} />}
+      {data.reviews?.length > 0 && <Comments reviews={data.reviews} />}
       <StyledLink href="/">Back to all</StyledLink>
     </ProductCard>
   );
