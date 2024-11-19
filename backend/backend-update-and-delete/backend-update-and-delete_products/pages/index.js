@@ -26,7 +26,8 @@ export default function HomePage() {
     });
 
     if (!response.ok) {
-      console.error(response.status);
+      const responseInfo = await response.json();
+      alert(responseInfo.error);
       return;
     }
 

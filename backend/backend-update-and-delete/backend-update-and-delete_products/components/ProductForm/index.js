@@ -13,6 +13,7 @@ export default function ProductForm({ onSubmit, isEditMode, prevProductInfo }) {
           type="text"
           id="name"
           name="name"
+          autoComplete="name"
           defaultValue={prevProductInfo.name}
         />
       </StyledLabel>
@@ -22,6 +23,7 @@ export default function ProductForm({ onSubmit, isEditMode, prevProductInfo }) {
           type="text"
           id="description"
           name="description"
+          autoComplete="name"
           defaultValue={prevProductInfo.description}
         />
       </StyledLabel>
@@ -31,6 +33,7 @@ export default function ProductForm({ onSubmit, isEditMode, prevProductInfo }) {
           type="number"
           id="price"
           name="price"
+          autoComplete="off"
           min="0"
           defaultValue={prevProductInfo.price}
         />
@@ -40,6 +43,7 @@ export default function ProductForm({ onSubmit, isEditMode, prevProductInfo }) {
         <select
           id="currency"
           name="currency"
+          autoComplete="off"
           defaultValue={prevProductInfo.currency}
         >
           <option value="EUR">EUR</option>
