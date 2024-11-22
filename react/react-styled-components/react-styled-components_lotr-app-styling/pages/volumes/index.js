@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
+import { uid } from "uid";
 import { introduction, volumes } from "../../lib/data";
 
 export default function Volumes() {
@@ -14,7 +15,7 @@ export default function Volumes() {
         <StyledH2>All Volumes</StyledH2>
         <StyledList>
           {volumes.map((volume) => (
-            <StyledListItem key={volume.id}>
+            <StyledListItem key={uid()}>
               <StyledLink href={`/volumes/${volume.slug}`}>
                 <StyledFigure>
                   <Image
