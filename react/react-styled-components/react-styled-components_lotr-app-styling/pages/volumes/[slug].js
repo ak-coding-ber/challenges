@@ -106,6 +106,11 @@ const StyledH1 = styled.h1`
 const StyledVolumeDetail = styled.section`
   display: flex;
   background-color: ${({ $color }) => $color};
+  background: linear-gradient(
+    100deg,
+    ${({ $color }) => $color} 75%,
+    var(--color-clouds) 160%
+  );
   color: var(--color-clouds);
   width: 100%;
   padding: 24px 32px;

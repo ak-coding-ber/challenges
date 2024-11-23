@@ -16,8 +16,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font: var(--font-body);
     padding: 48px 0;
-    margin: 0;
+    margin: auto;
     min-height: 100vh;
+    max-width: 500px;
     background-color: var(--color-clouds);
     color: var(--color-earth);
   }
