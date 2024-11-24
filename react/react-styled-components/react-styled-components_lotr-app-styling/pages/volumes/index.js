@@ -74,7 +74,7 @@ const StyledParagraph = styled.p`
 const StyledList = styled.ul`
   display: flex;
   list-style: none;
-  padding: 0 32px 0 0;
+  padding: 0;
   margin: 0;
   justify-content: space-between;
 `;
