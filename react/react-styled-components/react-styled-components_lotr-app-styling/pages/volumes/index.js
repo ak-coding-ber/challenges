@@ -93,6 +93,14 @@ const StyledFigure = styled.figure`
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  img {
+    box-shadow: var(--box-shadow-book);
+  }
+
+  img:hover {
+    box-shadow: var(--box-shadow-book--hover);
+  }
 `;
 
 const StyledFigCaption = styled.figcaption`

@@ -43,7 +43,7 @@ export default function VolumeDetail() {
             </li>
           ))}
         </StyledList>
-        <Image
+        <StyledImage
           src={cover}
           alt={`Cover image of ${title}`}
           width={140}
@@ -176,4 +176,8 @@ const StyledLink = styled(Link)`
       justify-content: flex-end;
       text-align: right;
     `};
+`;
+
+const StyledImage = styled(Image)`
+  box-shadow: var(--box-shadow-book);
 `;
