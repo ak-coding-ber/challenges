@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   --color-clouds: #f1f1f1;
   --color-smoke: #d4d1cd;
   --background-color: var(--color-clouds);
-  --icon-color: var(--color-smoke);
+  --text-color: var(--color-earth);
 
   /* Font styles */
   --font-family: ${lora.style.fontFamily}, serif;
@@ -61,12 +61,7 @@ export const GlobalStyle = createGlobalStyle`
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: var(--color-earth);
-    --text-color: var(--color-smoke);
-    --icon-color: var(--color-smoke);
+    --text-color: var(--color-smoke); 
   }
-}
-
-svg {
-  color: var(--icon-color);
 }
 `;
