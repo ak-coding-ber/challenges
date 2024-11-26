@@ -19,8 +19,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: auto;
     min-height: 100vh;
     max-width: 500px;
-    background-color: var(--color-clouds);
-    color: var(--color-earth);
+    background-color: var(--background-color);
+    color: var(--text-color);
   }
 
   :root {
@@ -28,6 +28,8 @@ export const GlobalStyle = createGlobalStyle`
   --color-earth: #282828;
   --color-clouds: #f1f1f1;
   --color-smoke: #d4d1cd;
+  --background-color: var(--color-clouds);
+  --text-color: var(--color-earth);
 
   /* Font styles */
   --font-family: ${lora.style.fontFamily}, serif;
@@ -54,5 +56,12 @@ export const GlobalStyle = createGlobalStyle`
   --box-shadow-book--hover: 0 6px 11px -2px rgba(0, 0, 0, 0.12),
     0 8px 7px -4px rgba(0, 0, 0, 0.09), 0 17px 11px -8px rgba(0, 0, 0, 0.09),
     0 24px 15px -12px rgba(0, 0, 0, 0.09), 0 4px 15px 0 rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--color-earth);
+    --text-color: var(--color-smoke); 
+  }
 }
 `;

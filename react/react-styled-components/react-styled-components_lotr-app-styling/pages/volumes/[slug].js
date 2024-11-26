@@ -1,4 +1,7 @@
 import Image from "next/image";
+import ArrowLeft from "../../public/icons/arrow-left.svg";
+import ArrowRight from "../../public/icons/arrow-right.svg";
+import ChevronLeft from "../../public/icons/chevron-left.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
@@ -23,12 +26,7 @@ export default function VolumeDetail() {
   return (
     <StyledMain>
       <StyledLink href="/volumes" $variant={"all_volumes"}>
-        <Image
-          src={"/icons/chevron-left.svg"}
-          alt={"navigation arrow back"}
-          width={24}
-          height={24}
-        />
+        <ChevronLeft width={24} height={24} />
         All Volumes
       </StyledLink>
       <StyledVolumeIntro>
@@ -45,7 +43,7 @@ export default function VolumeDetail() {
             </li>
           ))}
         </StyledList>
-        <Image
+        <StyledImage
           src={cover}
           alt={`Cover image of ${title}`}
           width={140}
@@ -58,12 +56,7 @@ export default function VolumeDetail() {
             href={`/volumes/${previousVolume.slug}`}
             $variant={"previous"}
           >
-            <Image
-              src={"/icons/arrow-left.svg"}
-              alt={"navigation arrow back"}
-              width={24}
-              height={24}
-            />
+            <ArrowLeft width={24} height={24} />
             <div className="link__textcontainer">
               <p className="link__direction">Previous Volume: </p>
               <p className="link__volume-title">{previousVolume.title}</p>
@@ -79,12 +72,7 @@ export default function VolumeDetail() {
               <p className="link__volume-title">{nextVolume.title}</p>
             </div>
 
-            <Image
-              src={"/icons/arrow-right.svg"}
-              alt={"navigation arrow back"}
-              width={24}
-              height={24}
-            />
+            <ArrowRight width={24} height={24} />
           </StyledLink>
         </div>
       ) : null}
@@ -107,9 +95,9 @@ const StyledVolumeDetail = styled.section`
   display: flex;
   background-color: ${({ $color }) => $color};
   background: linear-gradient(
-    100deg,
-    ${({ $color }) => $color} 75%,
-    var(--color-clouds) 160%
+    125deg,
+    ${({ $color }) => $color} 50%,
+    var(--color-clouds) 300%
   );
   color: var(--color-clouds);
   width: 100%;
@@ -188,4 +176,8 @@ const StyledLink = styled(Link)`
       justify-content: flex-end;
       text-align: right;
     `};
+`;
+
+const StyledImage = styled(Image)`
+  box-shadow: var(--box-shadow-book);
 `;
