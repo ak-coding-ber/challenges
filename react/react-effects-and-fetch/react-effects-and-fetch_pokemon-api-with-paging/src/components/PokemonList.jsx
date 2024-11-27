@@ -4,6 +4,7 @@ import "./PokemonList.css";
 export default function PokemonList() {
   const [data, setData] = useState({});
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?offset=0");
+  const [page, setPage] = useState(1);
 
   function handleClickPrevious() {
     if (!data.previous) {
@@ -11,6 +12,7 @@ export default function PokemonList() {
     } else {
       // fixes problem that on last page the limit gets changed to 2 in the previous link
       setUrl(data.previous.replace(/limit=\d+/, "limit=20"));
+      setPage(page - 1);
     }
   }
 
@@ -20,6 +22,7 @@ export default function PokemonList() {
     } else {
       // fixes problem that on second-last page the limit gets changed to 2 in the next link
       setUrl(data.next.replace(/limit=\d+/, "limit=20"));
+      setPage(page + 1);
     }
   }
 
@@ -37,10 +40,10 @@ export default function PokemonList() {
     loadPokemon();
   }, [url]);
 
-  if (Object.entries(data).length) {
-    console.log(data);
-    console.log(data.results);
-  }
+  // if (Object.entries(data).length) {
+  //   console.log(data);
+  //   console.log(data.results);
+  // }
 
   if (!Object.entries(data).length) {
     return <div>Loading</div>;
@@ -48,19 +51,31 @@ export default function PokemonList() {
 
   return (
     <main>
-      <button type="button" className="button" onClick={handleClickPrevious}>
-        Previous Page
-      </button>
-      <button type="button" className="button" onClick={handleClickNext}>
-        Next Page
-      </button>
-      <ul>
+      <div className="page-navigation">
+        <button type="button" className="button" onClick={handleClickPrevious}>
+          Previous
+        </button>
+        <div className="page-info">{page}</div>
+        <button type="button" className="button" onClick={handleClickNext}>
+          Next
+        </button>
+      </div>
+      <ul className="pokemon-list">
         {data.results.map(({ name }) => (
           <li key={name} className="pokemon">
             {name}
           </li>
         ))}
       </ul>
+      <div className="page-navigation">
+        <button type="button" className="button" onClick={handleClickPrevious}>
+          Previous
+        </button>
+        <div className="page-info">{page}</div>
+        <button type="button" className="button" onClick={handleClickNext}>
+          Next
+        </button>
+      </div>
     </main>
   );
 }
