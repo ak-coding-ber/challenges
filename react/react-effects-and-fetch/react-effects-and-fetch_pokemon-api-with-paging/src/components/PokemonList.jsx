@@ -2,41 +2,49 @@ import { useEffect, useState } from "react";
 import "./PokemonList.css";
 
 export default function PokemonList() {
-  const [pokemon, setPokemon] = useState([]);
-  const [offset, setOffset] = useState(0);
+  const [data, setData] = useState({});
+  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?offset=0");
 
   function handleClickPrevious() {
-    if (offset === 0) {
-      alert("You are already on the first page.You cannot go back further.");
+    if (!data.previous) {
+      alert("You are already on the first page. You cannot go back further.");
     } else {
-      setOffset(offset - 20);
+      // fixes problem that on last page the limit gets changed to 2 in the previous link
+      setUrl(data.previous.replace(/limit=\d+/, "limit=20"));
     }
   }
 
   function handleClickNext() {
-    if (offset === 1300) {
-      alert("You are already on the last page.You cannot go on further.");
+    if (!data.next) {
+      alert("You are already on the last page. You cannot go on further.");
     } else {
-      setOffset(offset + 20);
+      // fixes problem that on second-last page the limit gets changed to 2 in the next link
+      setUrl(data.next.replace(/limit=\d+/, "limit=20"));
     }
   }
 
   useEffect(() => {
     async function loadPokemon() {
       try {
-        const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon?offset=${offset}`
-        );
+        const response = await fetch(url);
         const data = await response.json();
-        setPokemon(data.results);
-        console.log(`https://pokeapi.co/api/v2/pokemon?offset=${offset}`);
+        setData(data);
       } catch (error) {
         console.log(error);
       }
     }
 
     loadPokemon();
-  }, [offset]);
+  }, [url]);
+
+  if (Object.entries(data).length) {
+    console.log(data);
+    console.log(data.results);
+  }
+
+  if (!Object.entries(data).length) {
+    return <div>Loading</div>;
+  }
 
   return (
     <main>
@@ -47,7 +55,7 @@ export default function PokemonList() {
         Next Page
       </button>
       <ul>
-        {pokemon.map(({ name }) => (
+        {data.results.map(({ name }) => (
           <li key={name} className="pokemon">
             {name}
           </li>
