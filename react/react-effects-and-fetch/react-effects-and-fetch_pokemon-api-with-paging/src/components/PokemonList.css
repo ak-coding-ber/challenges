@@ -8,12 +8,17 @@
   font-size: 18px;
 }
 
+.button--disabled {
+  visibility: hidden;
+}
+
 .button:hover {
   background-color: var(--secondary-dark);
 }
 
 .pokemon-list {
   width: 100%;
+  height: 100%;
   max-width: 500px;
   padding: 10px;
 }

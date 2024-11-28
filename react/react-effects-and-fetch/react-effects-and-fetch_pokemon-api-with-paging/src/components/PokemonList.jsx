@@ -5,25 +5,19 @@ export default function PokemonList() {
   const [data, setData] = useState({});
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon?offset=0");
   const [page, setPage] = useState(1);
+  const previousButtons = document.querySelectorAll(".button__previous");
+  const nextButtons = document.querySelectorAll(".button__next");
 
   function handleClickPrevious() {
-    if (!data.previous) {
-      alert("You are already on the first page. You cannot go back further.");
-    } else {
-      // fixes problem that on last page the limit gets changed to 2 in the previous link
-      setUrl(data.previous.replace(/limit=\d+/, "limit=20"));
-      setPage(page - 1);
-    }
+    // fixes problem that on last page the limit gets changed to 2 in the previous link
+    setUrl(data.previous.replace(/limit=\d+/, "limit=20"));
+    setPage(page - 1);
   }
 
   function handleClickNext() {
-    if (!data.next) {
-      alert("You are already on the last page. You cannot go on further.");
-    } else {
-      // fixes problem that on second-last page the limit gets changed to 2 in the next link
-      setUrl(data.next.replace(/limit=\d+/, "limit=20"));
-      setPage(page + 1);
-    }
+    // fixes problem that on second-last page the limit gets changed to 2 in the next link
+    setUrl(data.next.replace(/limit=\d+/, "limit=20"));
+    setPage(page + 1);
   }
 
   useEffect(() => {
@@ -40,23 +34,45 @@ export default function PokemonList() {
     loadPokemon();
   }, [url]);
 
-  // if (Object.entries(data).length) {
-  //   console.log(data);
-  //   console.log(data.results);
-  // }
-
   if (!Object.entries(data).length) {
     return <div>Loading</div>;
+  }
+
+  if (previousButtons && nextButtons && data) {
+    if (!data.previous) {
+      // case, when user reached the first page
+      previousButtons.forEach((button) =>
+        button.classList.add("button--disabled")
+      );
+    } else if (!data.next) {
+      // case, when user reached the last page
+      nextButtons.forEach((button) => button.classList.add("button--disabled"));
+    } else {
+      previousButtons.forEach((button) =>
+        button.classList.remove("button--disabled")
+      );
+      nextButtons.forEach((button) =>
+        button.classList.remove("button--disabled")
+      );
+    }
   }
 
   return (
     <main>
       <div className="page-navigation">
-        <button type="button" className="button" onClick={handleClickPrevious}>
+        <button
+          type="button"
+          className="button button__previous button--disabled"
+          onClick={handleClickPrevious}
+        >
           Previous
         </button>
         <div className="page-info">{page}</div>
-        <button type="button" className="button" onClick={handleClickNext}>
+        <button
+          type="button"
+          className="button button__next"
+          onClick={handleClickNext}
+        >
           Next
         </button>
       </div>
@@ -68,11 +84,19 @@ export default function PokemonList() {
         ))}
       </ul>
       <div className="page-navigation">
-        <button type="button" className="button" onClick={handleClickPrevious}>
+        <button
+          type="button"
+          className="button button__previous button--disabled"
+          onClick={handleClickPrevious}
+        >
           Previous
         </button>
         <div className="page-info">{page}</div>
-        <button type="button" className="button" onClick={handleClickNext}>
+        <button
+          type="button"
+          className="button button__next"
+          onClick={handleClickNext}
+        >
           Next
         </button>
       </div>
