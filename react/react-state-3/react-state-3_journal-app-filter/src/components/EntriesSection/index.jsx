@@ -23,7 +23,7 @@ export default function EntriesSection({
           onClick={onShowAllEntries}
         >
           All Entries{" "}
-          <Badge isActive={filter === "favorites" ? true : false}>
+          <Badge isActive={filter === "all" ? true : false}>
             {countAllEntries}
           </Badge>
         </Tab>
