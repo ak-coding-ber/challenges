@@ -37,4 +37,25 @@ test("renders a label and an input with the correct attributes", () => {
   expect(inputField).toBeRequired();
 });
 
-test("calls callback on every user input", async () => {});
+test("calls callback on every user input", async () => {
+  const handleChange = jest.fn();
+
+  const user = userEvent.setup();
+
+  render(
+    <Input
+      labelText={"input-text"}
+      placeholder={"Please type in something."}
+      name={"input"}
+      required={true}
+      onChange={handleChange}
+      value={"test value"}
+    />
+  );
+
+  const inputField = screen.getByLabelText(/input-text/i);
+
+  await user.type(inputField, "Test");
+
+  expect(handleChange).toHaveBeenCalledTimes(4);
+});
