@@ -51,8 +51,23 @@ test("submits the correct form data when every field is filled out", async () =>
     playerNames: ["Skip", "Ronald"],
   });
 
-  // Submit function should have been called only one time
+  // handleSubmit function should have been called only one time
   expect(handleSubmit).toHaveBeenCalledTimes(1);
 });
 
-test("does not submit form if one input field is left empty", async () => {});
+test("does not submit form if one input field is left empty", async () => {
+  const handleSubmit = jest.fn();
+  const user = userEvent.setup();
+
+  render(<GameForm onCreateGame={handleSubmit} />);
+
+  const nameOfGame = screen.getByRole("textbox", { name: "Name of game" });
+  const submitButton = screen.getByRole("button", { name: "Create game" });
+
+  // simulating that user only types in the game name
+  await user.type(nameOfGame, "Gothic 2");
+  await user.click(submitButton);
+
+  // handleSubmit function should not have been called at all
+  expect(handleSubmit).toHaveBeenCalledTimes(0);
+});
